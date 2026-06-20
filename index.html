@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python description</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .slides {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+            scroll-margin-top: 100px;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* 返回顶部按钮 */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #3498db;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 200;
+            transition: all 0.3s ease;
+        }
+        
+        #back-to-top:hover {
+            background: #2980b9;
+            transform: scale(1.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #777;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .slides {
+                gap: 2rem;
+            }
+            #back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>describe python</h1>
+        <p>basic python language</p>
+    </div>
+
+    <div class="container">
+        <div class="slides">
+            <div class="slide" id="slide1">
+                <img src="slides/slide-1.png" alt="Slide 1">
+            </div>
+            
+            <div class="slide" id="slide2">
+                <img src="slides/slide-2.png" alt="Slide 2">
+            </div>
+            
+            <div class="slide" id="slide3">
+                <img src="slides/slide-3.png" alt="Slide 3">
+            </div>
+            
+            <div class="slide" id="slide4">
+                <img src="slides/slide-4.png" alt="Slide 4">
+            </div>
+            
+            <div class="slide" id="slide5">
+                <img src="slides/slide-5.png" alt="Slide 5">
+            </div>
+        </div>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <div id="back-to-top" title="返回顶部">↑</div>
+
+    <footer>
+        <p> ❤️❤️❤️</p>
+    </footer>
+
+    <script>
+        // 返回顶部按钮显示/隐藏逻辑
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        // 点击返回顶部（平滑滚动）
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
